@@ -1,4 +1,4 @@
-debug: true
+debug: false
 
 codegen:
   db: oracle
@@ -7,13 +7,17 @@ codegen:
   username: klxx_rls
   password: klxx_rls
   author: zenglw
-  tablePrefix: T_
+  tablePrefix: Tab_
   tableSuffix:
   templatePath: classpath:templates/genCode/base
   projectPath: E:\IdeaProjects\erp\erp_foundation\erp_foundation_core
   javaPath: src/main/java
   resourcesPath: src/main/resources
   javaFiles:
+    -
+      templateName: mapper.template
+      packageName: com.klxx.erp.foundation.mapper
+      fileSuffix: mapper
     -
       templateName: repository.template
       packageName: com.klxx.erp.foundation.repository
@@ -30,4 +34,4 @@ codegen:
 #  resourcesFiles:
 
   generateTable:
-    - T_ACCOUNT
+    - tab_organization_info

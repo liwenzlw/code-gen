@@ -20,6 +20,10 @@ import java.io.Serializable;
 @Table(name = "[(${tableMateData.tableName})]")
 public class [(${tableMateData.className})] implements Serializable {
     [# th:each="item : ${tableMateData.columns}"]
+      [# th:if="${item.javaFieldName}=='id'"]
+      @Id
+      @GeneratedValue(strategy= GenerationType.SEQUENCE, generator="[# th:text="'SEQ_' + ${tableMateData.tableName}") /]")
+      [/]
       @ApiModelProperty(value = "[(${item.dbColumnComments})]")
       private [(${item.javaFieldType})] [(${item.javaFieldName})];
     [/]

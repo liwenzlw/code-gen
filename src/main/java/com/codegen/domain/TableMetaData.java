@@ -64,10 +64,12 @@ public class TableMetaData {
 
     public void build(CodeGenConfig codeGenConfig) {
         String tableName = this.tableName;
-        if(null != codeGenConfig && !StringUtils.isEmpty(codeGenConfig.getTablePrefix()) && tableName.startsWith(codeGenConfig.getTablePrefix())) {
+        //表前缀
+        if(null != codeGenConfig && !StringUtils.isEmpty(codeGenConfig.getTablePrefix()) && tableName.startsWith(codeGenConfig.getTablePrefix().toUpperCase())) {
             tableName = tableName.replaceFirst(codeGenConfig.getTablePrefix(),"");
         }
-        if(null != codeGenConfig && !StringUtils.isEmpty(codeGenConfig.getTableSuffix()) && tableName.endsWith(codeGenConfig.getTableSuffix())) {
+        //表后缀
+        if(null != codeGenConfig && !StringUtils.isEmpty(codeGenConfig.getTableSuffix()) && tableName.endsWith(codeGenConfig.getTableSuffix().toUpperCase())) {
             int i = tableName.lastIndexOf(codeGenConfig.getTableSuffix());
             tableName = tableName.substring(0,i);
         }

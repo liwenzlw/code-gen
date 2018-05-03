@@ -2,6 +2,7 @@ package [(${fileMeta.packageName})];
 
 import com.klxx.mybatis.jpa.mapper.JpaMapper;
 import org.apache.ibatis.annotations.Mapper;
+import com.klxx.common.db.annotation.Table;
 
 /**
  * [(${tableMateData.tableComment})]

@@ -16,6 +16,6 @@ public class [(${tableMateData.className})]Service {
 
     public int updateNotNullByPrimaryKey([(${tableMateData.className})] [(${tableMateData.fieldName})]) {
         Assert.notNull([(${tableMateData.fieldName})].getId(),"id为空");
-        return [(${tableMateData.fieldName})]Repository.updateNotNullByPrimaryKey(orderChange);
+        return [(${tableMateData.fieldName})]Repository.updateNotNullByPrimaryKey([(${tableMateData.fieldName})]);
     }
 }

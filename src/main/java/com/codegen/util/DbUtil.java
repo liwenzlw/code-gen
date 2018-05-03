@@ -50,6 +50,8 @@ public class DbUtil {
 
     public TableMetaData buildTableMetaData (String tableName) {
 
+        tableName = tableName.toUpperCase();
+
         TableMetaData tableMetaData = new TableMetaData();
         try {
             String schema = dbMetaData.getUserName().toUpperCase();

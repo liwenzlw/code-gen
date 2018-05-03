@@ -11,6 +11,7 @@ import org.thymeleaf.context.Context;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.templatemode.TemplateMode;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -91,17 +92,22 @@ public class GenerateFile {
            ctx.setVariable("config",codeGenConfig);
            ctx.setVariable("currentDate",LocalDate.now().format(DateTimeFormatter.ISO_LOCAL_DATE));
            FileWriter fw = null;
+           File file = null;
            if(null != codeGenConfig.getJavaFiles()) {
                for (FileMetaData javaFile: codeGenConfig.getJavaFiles()) {
                    ctx.setVariable("fileMeta",javaFile);
-                   fw = new FileWriter(javaFile.getFilePath() + "/" + tableMetaData.getClassName() + javaFile.getFileSuffix() + ".java");
+                   file = new File(javaFile.getFilePath() + "/" + tableMetaData.getClassName() + javaFile.getFileSuffix() + ".java");
+                   if(file.exists()) continue;//不会覆盖文件
+                   fw = new FileWriter(file);
                    templateEngine.process(javaFile.getTemplatePath() + "/"  + javaFile.getTemplateName(),ctx,fw);
                }
            }
            if(null != codeGenConfig.getResourcesFiles()) {
                for (FileMetaData resourceFile: codeGenConfig.getResourcesFiles()) {
                    ctx.setVariable("fileMeta",resourceFile);
-                   fw = new FileWriter(resourceFile.getFilePath() + "/" + tableMetaData.getClassName() + resourceFile.getFileSuffix() + ".xml");
+                   file = new File(resourceFile.getFilePath() + "/" + tableMetaData.getClassName() + resourceFile.getFileSuffix() + ".xml");
+                   if(file.exists()) continue;//不会覆盖文件
+                   fw = new FileWriter(file);
                    templateEngine.process(resourceFile.getTemplatePath() + "/"  + resourceFile.getTemplateName(),ctx,fw);
                }
            }
