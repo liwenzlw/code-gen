@@ -66,11 +66,11 @@ public class TableMetaData {
         String tableName = this.tableName;
         //表前缀
         if(null != codeGenConfig && !StringUtils.isEmpty(codeGenConfig.getTablePrefix()) && tableName.startsWith(codeGenConfig.getTablePrefix().toUpperCase())) {
-            tableName = tableName.replaceFirst(codeGenConfig.getTablePrefix(),"");
+            tableName = tableName.replaceFirst(codeGenConfig.getTablePrefix().toUpperCase(),"");
         }
         //表后缀
         if(null != codeGenConfig && !StringUtils.isEmpty(codeGenConfig.getTableSuffix()) && tableName.endsWith(codeGenConfig.getTableSuffix().toUpperCase())) {
-            int i = tableName.lastIndexOf(codeGenConfig.getTableSuffix());
+            int i = tableName.lastIndexOf(codeGenConfig.getTableSuffix().toUpperCase());
             tableName = tableName.substring(0,i);
         }
         String className = CamelConvertUtil.underline2Camel(tableName,false);

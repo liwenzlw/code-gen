@@ -17,7 +17,7 @@ public class [(${tableMateData.className})]Repository {
 
     /**
      * 只更新非空字段
-     * @param account
+     * @param [(${tableMateData.fieldName})]
      * @return
      */
     public int updateNotNullByPrimaryKey([(${tableMateData.className})] [(${tableMateData.fieldName})]) {
@@ -27,6 +27,10 @@ public class [(${tableMateData.className})]Repository {
 
     public [(${tableMateData.className})] getOne([(${tableMateData.className})] [(${tableMateData.fieldName})]) {
         return [(${tableMateData.fieldName})]Mapper.findOne([(${tableMateData.fieldName})]);
+    }
+
+    public [(${tableMateData.className})] getOneById(Integer id) {
+        return [(${tableMateData.fieldName})]Mapper.findById(id);
     }
 
 }

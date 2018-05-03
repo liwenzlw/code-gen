@@ -1,6 +1,8 @@
 package [(${fileMeta.packageName})];
 import com.klxx.mybatis.jpa.annotation.GeneratedValue;
 import com.klxx.mybatis.jpa.enums.GenerationType;
+import com.klxx.common.db.annotation.Id;
+import com.klxx.common.db.annotation.Table;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
