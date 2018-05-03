@@ -1,0 +1,33 @@
+debug: true
+
+codegen:
+  db: oracle
+  driver: oracle.jdbc.driver.OracleDriver
+  url: jdbc:oracle:thin:@117.25.174.10:1521:orcl
+  username: klxx_rls
+  password: klxx_rls
+  author: zenglw
+  tablePrefix: T_
+  tableSuffix:
+  templatePath: classpath:templates/genCode/base
+  projectPath: E:\IdeaProjects\erp\erp_account\erp_account_core
+  javaPath: src/main/java
+  resourcesPath: src/main/resources
+  javaFiles:
+    -
+      templateName: repository.template
+      packageName: com.klxx.erp.account.repository
+      fileSuffix: repository
+    -
+      templateName: service.template
+      packageName: com.klxx.erp.account.service
+      fileSuffix: service
+    -
+      templateName: model.template
+      packageName: com.klxx.erp.account.domain
+      filePath: E:\IdeaProjects\erp\erp_account\erp_account_facade\src\main\java
+
+#  resourcesFiles:
+
+  generateTable:
+    - T_ACCOUNT

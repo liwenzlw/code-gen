@@ -1,0 +1,21 @@
+package [(${fileMeta.packageName})];
+
+import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
+
+/**
+ * [(${tableMateData.tableComment})]
+ * @author [(${config.author})]
+ * @date [(${currentDate})]
+ */
+@Service
+public class [(${tableMateData.className})]Service {
+
+    @Autowired
+    private [(${tableMateData.className})]Repository [(${tableMateData.fieldName})]Repository;
+
+    public int updateNotNullByPrimaryKey([(${tableMateData.className})] [(${tableMateData.fieldName})]) {
+        Assert.notNull([(${tableMateData.fieldName})].getId(),"id为空");
+        return [(${tableMateData.fieldName})]Repository.updateNotNullByPrimaryKey(orderChange);
+    }
+}

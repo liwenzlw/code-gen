@@ -1,0 +1,13 @@
+package [(${fileMeta.packageName})];
+
+import com.klxx.mybatis.jpa.mapper.JpaMapper;
+import org.apache.ibatis.annotations.Mapper;
+
+/**
+ * [(${tableMateData.tableComment})]
+ * @author [(${config.author})]
+ * @date [(${currentDate})]
+ */
+@Mapper
+public interface [(${tableMateData.className})]Mapper extends JpaMapper<[(${tableMateData.className})], Integer> {
+}

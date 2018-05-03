@@ -1,0 +1,26 @@
+package [(${fileMeta.packageName})];
+import com.klxx.mybatis.jpa.annotation.GeneratedValue;
+import com.klxx.mybatis.jpa.enums.GenerationType;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import java.io.Serializable;
+
+/**
+ * [(${tableMateData.tableComment})]
+ * @author [(${config.author})]
+ * @date [(${currentDate})]
+ */
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "[(${tableMateData.tableName})]")
+public class [(${tableMateData.className})] implements Serializable {
+    [# th:each="item : ${tableMateData.columns}"]
+      @ApiModelProperty(value = "[(${item.dbColumnComments})]")
+      private [(${item.javaFieldType})] [(${item.javaFieldName})];
+    [/]
+}
