@@ -3,9 +3,9 @@ debug: false
 codegen:
   db: oracle
   driver: oracle.jdbc.driver.OracleDriver
-  url: jdbc:oracle:thin:@117.25.174.10:1521:orcl
-  username: klxx_rls
-  password: klxx_rls
+  url: 数据库url
+  username: 数据库用户名
+  password: 数据库密码
   author: zenglw
   tablePrefix: TAB_
   tableSuffix:
