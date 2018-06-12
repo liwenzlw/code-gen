@@ -1,0 +1,37 @@
+debug: false
+
+codegen:
+  db: oracle
+  driver: oracle.jdbc.driver.OracleDriver
+  url: jdbc:oracle:thin:@117.25.174.10:1521:orcl
+  username: klxx_rls
+  password: klxx_rls
+  author: zenglw
+  tablePrefix: TAB_
+  tableSuffix:
+  templatePath: classpath:templates/genCode/base
+  projectPath: D:\IdeaProjects\ta\ta-student\student-core
+  javaPath: src/main/java
+  resourcesPath: src/main/resources
+  javaFiles:
+    -
+      templateName: mapper.template
+      packageName: com.klxx.ta.student.mapper
+      fileSuffix: Mapper
+    -
+      templateName: repository.template
+      packageName: com.klxx.ta.student.repository
+      fileSuffix: repository
+    -
+      templateName: service.template
+      packageName: com.klxx.ta.student.service
+      fileSuffix: service
+    -
+      templateName: model.template
+      packageName: com.klxx.ta.student.domain
+      filePath: D:\IdeaProjects\ta\ta-student\student-facade\src\main\java
+
+#  resourcesFiles:
+
+  generateTable:
+    - TAB_STUDENT_INFO

@@ -1,4 +1,4 @@
 debug: false
 spring:
   profiles:
-    active: foundation
+    active: base

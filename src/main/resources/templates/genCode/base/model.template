@@ -1,8 +1,9 @@
 package [(${fileMeta.packageName})];
-import com.klxx.mybatis.jpa.annotation.GeneratedValue;
-import com.klxx.mybatis.jpa.enums.GenerationType;
+import com.klxx.common.db.annotation.GeneratedValue;
+import com.klxx.common.db.enums.GenerationType;
 import com.klxx.common.db.annotation.Id;
 import com.klxx.common.db.annotation.Table;
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,6 +18,7 @@ import java.io.Serializable;
  */
 @Data
 @Builder
+@ApiModel
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "[(${tableMateData.tableName})]")

@@ -1,0 +1,39 @@
+debug: false
+
+codegen:
+  db: oracle
+  driver: oracle.jdbc.driver.OracleDriver
+  url: jdbc:oracle:thin:@117.25.174.10:1521:orcl
+  username: klxx_rls
+  password: klxx_rls
+  author: zenglw
+  tablePrefix: TAB_
+  tableSuffix:
+  templatePath: classpath:templates/genCode/base
+  projectPath: D:\IdeaProjects\ta\ta-order\order-core
+  javaPath: src/main/java
+  resourcesPath: src/main/resources
+  javaFiles:
+    -
+      templateName: mapper.template
+      packageName: com.klxx.ta.order.mapper
+      fileSuffix: Mapper
+    -
+      templateName: repository.template
+      packageName: com.klxx.ta.order.repository
+      fileSuffix: repository
+    -
+      templateName: service.template
+      packageName: com.klxx.ta.order.service
+      fileSuffix: service
+    -
+      templateName: model.template
+      packageName: com.klxx.ta.order.domain
+      filePath: D:\IdeaProjects\ta\ta-order\order-facade\src\main\java
+
+#  resourcesFiles:
+
+  generateTable:
+    - TAB_ORDER_INFO
+    - TAB_ORDER_INFO_DETAIL
+    - TAB_ORDER_COURSE_TIMES_INFO
