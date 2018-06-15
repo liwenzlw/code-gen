@@ -2,7 +2,7 @@ package [(${fileMeta.packageName})];
 
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.Assert;
+import com.klxx.ta.common.util.TaAssert;
 
 /**
  * [(${tableMateData.tableComment})]
@@ -16,12 +16,12 @@ public class [(${tableMateData.className})]Service {
     private [(${tableMateData.className})]Repository [(${tableMateData.fieldName})]Repository;
 
     public int updateNotNullByPrimaryKey([(${tableMateData.className})] [(${tableMateData.fieldName})]) {
-        Assert.notNull([(${tableMateData.fieldName})].getId(),"id为空");
+        TaAssert.notNull([(${tableMateData.fieldName})].getId(),"id");
         return [(${tableMateData.fieldName})]Repository.updateNotNullByPrimaryKey([(${tableMateData.fieldName})]);
     }
 
-     public [(${tableMateData.className})] getOneById(Integer id) {
-        Assert.notNull(id,"id为空");
-        return [(${tableMateData.fieldName})]Repository.getOneById(id);
+     public [(${tableMateData.className})] findById(Integer id) {
+        TaAssert.notNull(id,"id");
+        return [(${tableMateData.fieldName})]Repository.findById(id);
      }
 }

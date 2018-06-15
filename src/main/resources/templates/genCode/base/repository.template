@@ -2,7 +2,7 @@ package [(${fileMeta.packageName})];
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.util.Assert;
+import com.klxx.ta.common.util.TaAssert;
 
 /**
  * [(${tableMateData.tableComment})]
@@ -21,7 +21,7 @@ public class [(${tableMateData.className})]Repository {
      * @return
      */
     public int updateNotNullByPrimaryKey([(${tableMateData.className})] [(${tableMateData.fieldName})]) {
-        Assert.notNull([(${tableMateData.fieldName})].getId(),"id为空");
+        TaAssert.notNull([(${tableMateData.fieldName})].getId(),"id");
         return [(${tableMateData.fieldName})]Mapper.updateByPrimaryKeySelective([(${tableMateData.fieldName})]);
     }
 
@@ -30,6 +30,7 @@ public class [(${tableMateData.className})]Repository {
     }
 
     public [(${tableMateData.className})] findById(Integer id) {
+        TaAssert.notNull([(${tableMateData.fieldName})].getId(),"id");
         return [(${tableMateData.fieldName})]Mapper.findById(id);
     }
 
