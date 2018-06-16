@@ -75,7 +75,7 @@ public class TableMetaData {
         }
         String className = CamelConvertUtil.underline2Camel(tableName,false);
         this.setClassName(className);
-        this.setFieldName(CamelConvertUtil.underline2Camel(className));
+        this.setFieldName(CamelConvertUtil.underline2Camel(tableName,true));
         for (ColumnMetaData c: columns) {
             c.build();
         }

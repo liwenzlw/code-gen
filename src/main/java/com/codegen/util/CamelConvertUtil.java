@@ -68,4 +68,10 @@ public class CamelConvertUtil {
         }
         return sb.toString();
     }
+
+    public static void main(String[] args) {
+        System.out.println(
+                CamelConvertUtil.underline2Camel("user_personal_settings")
+        );
+    }
 }
