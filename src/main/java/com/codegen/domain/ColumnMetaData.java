@@ -10,6 +10,10 @@ public class ColumnMetaData {
 
     private String dbColumnName;
     private String dbColumnType;
+    /**
+     * 列名小写
+     */
+    private String dbColumnNameLower;
     private String dbColumnComments;
     private String javaFieldName;
     private String javaFieldType;
@@ -64,10 +68,19 @@ public class ColumnMetaData {
         this.decimalDigits = decimalDigits;
     }
 
+    public String getDbColumnNameLower() {
+        return dbColumnNameLower;
+    }
+
+    public void setDbColumnNameLower(String dbColumnNameLower) {
+        this.dbColumnNameLower = dbColumnNameLower;
+    }
+
     public void build() {
         String javaFieldName = CamelConvertUtil.underline2Camel(this.dbColumnName);
         this.setJavaFieldName(javaFieldName);
         String javaFieldType = OracleJdbcMap.oracleJdbcMap.get(this.dbColumnType);
         this.setJavaFieldType(javaFieldType);
+        this.dbColumnNameLower = dbColumnName.toLowerCase();
     }
 }
