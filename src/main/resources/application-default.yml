@@ -12,7 +12,7 @@ codegen:
   templatePath: classpath:templates/genCode/base
   projectPath: E:/IdeaProjects/code-gen
   javaPath: src/main/java
-  resourcesPath: src/main/resources
+  resourcesPath: src/main/resources/mapper
   javaFiles:
     -
       templateName: repository.template
@@ -27,7 +27,9 @@ codegen:
       packageName: com.codegen.demo.model
       filePath: E:\IdeaProjects\code-gen\src\main\java
 
-#  resourcesFiles:
-
+  resourcesFiles:
+    -
+      templateName: mapperXml.template
+      fileSuffix: Mapper
   generateTable:
     - T_ACCOUNT

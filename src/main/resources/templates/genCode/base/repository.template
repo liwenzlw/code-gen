@@ -4,6 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import com.klxx.ta.common.util.TaAssert;
 import com.klxx.ta.[(${config.profile})].mapper.*;
+import com.klxx.ta.[(${config.profile})].domain.*;
+
+import java.util.List;
+import java.util.Optional;
 
 /**
  * [(${tableMateData.tableComment})]
@@ -27,7 +31,7 @@ public class [(${tableMateData.className})]Repository {
     }
 
     public Optional<[(${tableMateData.className})]> findOne([(${tableMateData.className})] [(${tableMateData.fieldName})]) {
-        [(${tableMateData.fieldName})].setStatus(EnumDeleteStatus.NORMAL);
+        TaAssert.notNull([(${tableMateData.fieldName})],"入参");
         return Optional.ofNullable([(${tableMateData.fieldName})]Mapper.findOne([(${tableMateData.fieldName})]));
     }
 
@@ -36,4 +40,8 @@ public class [(${tableMateData.className})]Repository {
         return [(${tableMateData.fieldName})]Mapper.findById(id);
     }
 
+    public List<[(${tableMateData.className})]> findList([(${tableMateData.className})] [(${tableMateData.fieldName})]) {
+            TaAssert.notNull([(${tableMateData.fieldName})],"入参");
+            return [(${tableMateData.fieldName})]Mapper.findList([(${tableMateData.fieldName})]);
+    }
 }

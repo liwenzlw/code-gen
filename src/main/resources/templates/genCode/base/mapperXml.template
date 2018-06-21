@@ -3,7 +3,7 @@
 <mapper namespace="com.klxx.ta.[(${config.profile})].mapper.[(${tableMateData.className})]Mapper">
 
     <sql id="baseColumes">
-        [# th:each="item : ${tableMateData.columns}"][(${item.dbColumnNameLower})],
+        [# th:each="item : ${tableMateData.columns}"]a.[(${item.dbColumnNameLower})],
         [/]
     </sql>
 </mapper>
