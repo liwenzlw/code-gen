@@ -1,6 +1,7 @@
 package com.codegen.config;
 
 import com.codegen.domain.FileMetaData;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -14,6 +15,8 @@ import java.util.List;
 @ConfigurationProperties(prefix = "codegen")
 public class CodeGenConfig {
 
+    @Value("${spring.profiles.active}")
+    private String profile;
     private String db;
     private String driver;
     private String url;
@@ -153,5 +156,13 @@ public class CodeGenConfig {
 
     public void setResourcesFiles(List<FileMetaData> resourcesFiles) {
         this.resourcesFiles = resourcesFiles;
+    }
+
+    public String getProfile() {
+        return profile;
+    }
+
+    public void setProfile(String profile) {
+        this.profile = profile;
     }
 }

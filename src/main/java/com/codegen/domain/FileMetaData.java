@@ -64,6 +64,9 @@ public class FileMetaData {
         if(null == filePath) {
             filePath = projectPath + "/" + resourcePath;
         }
+        if( null == packageName) {
+            packageName = "";
+        }
         filePath = filePath + "/" + packageName.replaceAll("\\.","/" );
         this.templatePath = templatePath;
         this.fileSuffix = CamelConvertUtil.underline2Camel(null == this.fileSuffix ?"":this.fileSuffix,false);

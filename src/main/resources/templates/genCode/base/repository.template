@@ -3,6 +3,7 @@ package [(${fileMeta.packageName})];
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import com.klxx.ta.common.util.TaAssert;
+import com.klxx.ta.[(${config.profile})].mapper.*;
 
 /**
  * [(${tableMateData.tableComment})]
@@ -26,11 +27,12 @@ public class [(${tableMateData.className})]Repository {
     }
 
     public Optional<[(${tableMateData.className})]> findOne([(${tableMateData.className})] [(${tableMateData.fieldName})]) {
+        [(${tableMateData.fieldName})].setStatus(EnumDeleteStatus.NORMAL);
         return Optional.ofNullable([(${tableMateData.fieldName})]Mapper.findOne([(${tableMateData.fieldName})]));
     }
 
     public [(${tableMateData.className})] findById(Integer id) {
-        TaAssert.notNull([(${tableMateData.fieldName})].getId(),"id");
+        TaAssert.notNull(id,"id");
         return [(${tableMateData.fieldName})]Mapper.findById(id);
     }
 

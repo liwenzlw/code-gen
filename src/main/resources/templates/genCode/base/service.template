@@ -3,6 +3,7 @@ package [(${fileMeta.packageName})];
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.klxx.ta.common.util.TaAssert;
+import com.klxx.ta.[(${config.profile})].service.*;
 
 /**
  * [(${tableMateData.tableComment})]
