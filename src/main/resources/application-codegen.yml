@@ -9,7 +9,7 @@ codegen:
   author: zenglw
   tablePrefix: T_
   tableSuffix:
-  templatePath: classpath:templates/feign
+  templatePath: classpath:templates/standard
   groupId: com.codegen
   artifactId: demo
   projectPath: D:/IdeaProjects/code-gen
