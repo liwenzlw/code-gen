@@ -1,0 +1,107 @@
+package [(${fileMeta.packageName})];
+
+import [(${config.groupId})].[(${config.artifactId})].common.db.domain.Page;
+import [(${config.groupId})].[(${config.artifactId})].base.util.UserSessionAttr;
+import [(${config.groupId})].[(${config.artifactId})].common.advice.Result;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.SessionAttribute;
+import [(${config.groupId})].[(${config.artifactId})].domain.[(${tableMateData.className})];
+import [(${config.groupId})].[(${config.artifactId})].api.[(${tableMateData.className})]ServiceApi;
+
+/**
+ * [(${tableMateData.tableComment})]
+ * @author Generate By [(${config.author})]
+ * @date [(${currentDate})]
+ */
+@Api(tags = "Generate Code")
+@RestController
+@RequestMapping("/[(${tableMateData.fieldName})]")
+public class [(${tableMateData.className})]Controller {
+
+    @Autowired
+    private [(${tableMateData.className})]ServiceApi [(${tableMateData.fieldName})]ServiceApi;
+
+    @ApiOperation(
+        value = "desc - author - version",
+        notes = "新增",
+        tags = "Generate Code"
+    )
+    @PostMapping()
+    public Result<[(${tableMateData.className})]> add(@RequestBody [(${tableMateData.className})] [(${tableMateData.fieldName})], @SessionAttribute UserSessionAttr userSessionAttr) {
+
+        return Result.success([(${tableMateData.fieldName})]ServiceApi.add([(${tableMateData.fieldName})]));
+    }
+
+    @ApiOperation(
+        value = "desc - author - version",
+        notes = "删除",
+        tags = "Generate Code"
+    )
+    @DeleteMapping("/{id}")
+    public Result delete(@PathVariable("id") Integer id, @SessionAttribute UserSessionAttr userSessionAttr) {
+        [(${tableMateData.fieldName})]ServiceApi.delete(id);
+        return Result.success();
+    }
+
+    @ApiOperation(
+        value = "desc - author - version",
+        notes = "修改",
+        tags = "Generate Code"
+    )
+    @PutMapping()
+    public Result<[(${tableMateData.className})]> update(@RequestBody [(${tableMateData.className})] [(${tableMateData.fieldName})], @SessionAttribute UserSessionAttr userSessionAttr) {
+        return Result.success([(${tableMateData.fieldName})]ServiceApi.update([(${tableMateData.fieldName})]));
+    }
+
+    @ApiOperation(
+        value = "desc - author - version",
+        notes = "通过ID查找",
+        tags = "Generate Code"
+    )
+    @GetMapping("/{id}")
+    public Result<[(${tableMateData.className})]> findById(@PathVariable("id") Integer id,@SessionAttribute UserSessionAttr userSessionAttr) {
+        return Result.success([(${tableMateData.fieldName})]ServiceApi.findById(id));
+    }
+
+    @ApiOperation(
+        value = "desc - author - version",
+        notes = "通过Domain查找",
+        tags = "Generate Code"
+    )
+    @GetMapping("/findOne")
+    public Result<[(${tableMateData.className})]> findOne([(${tableMateData.className})] [(${tableMateData.fieldName})], @SessionAttribute UserSessionAttr userSessionAttr) {
+        return Result.success([(${tableMateData.fieldName})]ServiceApi.findOne([(${tableMateData.fieldName})]));
+    }
+
+    @ApiOperation(
+        value = "desc - author - version",
+        notes = "分页查找",
+        tags = "Generate Code"
+    )
+    @PostMapping("/page")
+    public Result<Page<[(${tableMateData.className})]>> findPage(@SessionAttribute UserSessionAttr userSessionAttr) {
+        return Result.success([(${tableMateData.fieldName})]ServiceApi.findPage());
+    }
+
+    @ApiOperation(
+        value = "desc - author - version",
+        notes = "列表查找",
+        tags = "Generate Code"
+    )
+    @GetMapping("/list")
+    public Result<List<[(${tableMateData.className})]>> findList([(${tableMateData.className})] [(${tableMateData.fieldName})],@SessionAttribute UserSessionAttr userSessionAttr) {
+        return Result.success([(${tableMateData.fieldName})]ServiceApi.findList([(${tableMateData.fieldName})]));
+    }
+
+}

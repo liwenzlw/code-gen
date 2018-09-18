@@ -2,6 +2,7 @@ package com.codegen.domain;
 
 import com.codegen.util.CamelConvertUtil;
 import org.springframework.lang.Nullable;
+import org.springframework.util.StringUtils;
 
 /**
  * @author zenglw
@@ -69,6 +70,6 @@ public class FileMetaData {
         }
         filePath = filePath + "/" + packageName.replaceAll("\\.","/" );
         this.templatePath = templatePath;
-        this.fileSuffix = CamelConvertUtil.underline2Camel(null == this.fileSuffix ?"":this.fileSuffix,false);
+        this.fileSuffix = StringUtils.isEmpty(this.fileSuffix) ?"":this.fileSuffix.replaceFirst(String.valueOf(this.fileSuffix.charAt(0)),String.valueOf(this.fileSuffix.charAt(0)).toUpperCase());
     }
 }

@@ -24,7 +24,7 @@ public enum  EnumJdbcType {
     FLOAT_OBJ("float", Float.class),
     DOUBLE("double", double.class),
     DOUBLE_OBJ("double", Double.class),
-    NUMBER_DOUBLE("NUMBER", Double.class),
+    NUMBER_DOUBLE("NUMBER", BigDecimal.class),
     NUMBER_LONG("NUMBER", Long.class);
 
     private String jdbcType;

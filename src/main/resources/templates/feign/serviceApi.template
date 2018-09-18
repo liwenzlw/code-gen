@@ -1,0 +1,43 @@
+package [(${fileMeta.packageName})];
+
+
+import io.swagger.annotations.ApiOperation;
+import java.util.List;
+import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import [(${config.groupId})].[(${config.artifactId})].domain.[(${tableMateData.className})];
+import [(${config.groupId})].[(${config.artifactId})].common.db.domain.Page;
+
+/**
+ * [(${tableMateData.tableComment})]
+ * @author Generate By [(${config.author})]
+ * @date [(${currentDate})]
+ */
+@FeignClient("ta-[(${config.profile})]-core")
+public interface [(${tableMateData.className})]ServiceApi {
+
+
+    @PostMapping("/[(${tableMateData.fieldName})]/add")
+    [(${tableMateData.className})] add(@RequestBody [(${tableMateData.className})] [(${tableMateData.fieldName})]);
+
+    @PostMapping("/[(${tableMateData.fieldName})]/delete")
+    void delete(@RequestParam("id") Integer id);
+
+    @PostMapping("/[(${tableMateData.fieldName})]/update")
+    [(${tableMateData.className})] update(@RequestBody [(${tableMateData.className})] [(${tableMateData.fieldName})]);
+
+    @PostMapping("/[(${tableMateData.fieldName})]/findById")
+    [(${tableMateData.className})] findById(@RequestParam Integer id);
+
+    @PostMapping("/[(${tableMateData.fieldName})]/findOne")
+    [(${tableMateData.className})] findOne(@RequestBody [(${tableMateData.className})] [(${tableMateData.fieldName})]);
+
+    @PostMapping("/[(${tableMateData.fieldName})]/findPage")
+    Page<[(${tableMateData.className})]> findPage();
+
+    @PostMapping("/[(${tableMateData.fieldName})]/findList")
+    List<[(${tableMateData.className})]> findList(@RequestBody [(${tableMateData.className})] [(${tableMateData.fieldName})]);
+
+}

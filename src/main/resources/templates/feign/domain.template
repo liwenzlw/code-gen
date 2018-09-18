@@ -1,8 +1,8 @@
 package [(${fileMeta.packageName})];
-import com.klxx.common.db.annotation.GeneratedValue;
-import com.klxx.common.db.enums.GenerationType;
-import com.klxx.common.db.annotation.Id;
-import com.klxx.common.db.annotation.Table;
+import [(${config.groupId})].[(${config.artifactId})].common.db.annotation.GeneratedValue;
+import [(${config.groupId})].[(${config.artifactId})].common.db.enums.GenerationType;
+import [(${config.groupId})].[(${config.artifactId})].common.db.annotation.Id;
+import [(${config.groupId})].[(${config.artifactId})].common.db.annotation.Table;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
@@ -14,7 +14,7 @@ import java.util.Date;
 
 /**
  * [(${tableMateData.tableComment})]
- * @author [(${config.author})]
+ * @author Generate By [(${config.author})]
  * @date [(${currentDate})]
  */
 @Data

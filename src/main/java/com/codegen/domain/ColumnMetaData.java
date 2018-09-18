@@ -79,7 +79,12 @@ public class ColumnMetaData {
     public void build() {
         String javaFieldName = CamelConvertUtil.underline2Camel(this.dbColumnName);
         this.setJavaFieldName(javaFieldName);
-        String javaFieldType = OracleJdbcMap.oracleJdbcMap.get(this.dbColumnType);
+        String javaFieldType = null;
+        if(null != this.decimalDigits && this.decimalDigits > 0) {
+            javaFieldType = OracleJdbcMap.oracleJdbcMap.get("MONEY");
+        } else {
+            javaFieldType = OracleJdbcMap.oracleJdbcMap.get(this.dbColumnType);
+        }
         this.setJavaFieldType(javaFieldType);
         this.dbColumnNameLower = dbColumnName.toLowerCase();
     }

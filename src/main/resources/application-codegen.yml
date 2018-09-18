@@ -1,0 +1,53 @@
+debug: true
+
+codegen:
+  db: oracle
+  driver: oracle.jdbc.driver.OracleDriver
+  url: 数据库url
+  username: 用户名
+  password: 密码
+  author: zenglw
+  tablePrefix: T_
+  tableSuffix:
+  templatePath: classpath:templates/feign
+  groupId: com.codegen
+  artifactId: demo
+  projectPath: D:/IdeaProjects/code-gen
+  javaPath: src/main/java
+  resourcesPath: src/main/resources/mapper
+  javaFiles:
+    -
+      templateName: controller.template
+      packageName: com.codegen.demo.controller
+      fileSuffix: controller
+    -
+      templateName: serviceApi.template
+      packageName: com.codegen.demo.api
+      fileSuffix: serviceApi
+    -
+      templateName: serviceApiImpl.template
+      packageName: com.codegen.demo.apiImpl
+      fileSuffix: serviceApiImpl
+    -
+      templateName: service.template
+      packageName: com.codegen.demo.service
+      fileSuffix: service
+    -
+      templateName: repository.template
+      packageName: com.codegen.demo.repository
+      fileSuffix: repository
+    -
+      templateName: mapper.template
+      packageName: com.codegen.demo.mapper
+      fileSuffix: mapper
+    -
+      templateName: domain.template
+      packageName: com.codegen.demo.domain
+  resourcesFiles:
+    -
+      templateName: mapperXml.template
+      fileSuffix: Mapper
+
+  generateTable:
+    - t_user
+

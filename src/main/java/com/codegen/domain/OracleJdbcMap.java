@@ -28,6 +28,7 @@ public class OracleJdbcMap implements JdbcMap {
         oracleJdbcMap.put("CLOB","String");
         oracleJdbcMap.put("BLOB","Byte[]");
         oracleJdbcMap.put("BFILE","Byte[]");
+        oracleJdbcMap.put("MONEY","BigDecimal");
     }
 
     @Override

@@ -18,6 +18,9 @@ public class TableMetaData {
     private String tableName;
     private String className;
     private String tableComment;
+    /**
+     * 类名首字母小写
+     */
     private String fieldName;
 
     public List<ColumnMetaData> columns = new ArrayList<>();

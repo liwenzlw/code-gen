@@ -1,0 +1,50 @@
+package [(${fileMeta.packageName})];
+
+
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import [(${config.groupId})].[(${config.artifactId})].common.db.domain.Page;
+import [(${config.groupId})].[(${config.artifactId})].domain.[(${tableMateData.className})];
+import [(${config.groupId})].[(${config.artifactId})].repository.[(${tableMateData.className})]Repository;
+
+
+/**
+ * [(${tableMateData.tableComment})]
+ * @author Generate By [(${config.author})]
+ * @date [(${currentDate})]
+ */
+@Service
+public class [(${tableMateData.className})]Service {
+
+    @Autowired
+    private [(${tableMateData.className})]Repository [(${tableMateData.fieldName})]Repository;
+
+    public [(${tableMateData.className})] add([(${tableMateData.className})] [(${tableMateData.fieldName})]) {
+        return [(${tableMateData.fieldName})]Repository.add([(${tableMateData.fieldName})]);
+    }
+
+    public void delete(Integer id) {
+        [(${tableMateData.fieldName})]Repository.delete(id);
+    }
+
+    public [(${tableMateData.className})] update([(${tableMateData.className})] [(${tableMateData.fieldName})]) {
+       return [(${tableMateData.fieldName})]Repository.update([(${tableMateData.fieldName})]);
+    }
+
+    public Page<[(${tableMateData.className})]> findPage() {
+        return [(${tableMateData.fieldName})]Repository.findPage();
+    }
+
+    public List<[(${tableMateData.className})]> findList([(${tableMateData.className})] [(${tableMateData.fieldName})]) {
+        return [(${tableMateData.fieldName})]Repository.findList([(${tableMateData.fieldName})]);
+    }
+
+    public [(${tableMateData.className})] findById(Integer id) {
+        return [(${tableMateData.fieldName})]Repository.findById(id);
+    }
+
+    public [(${tableMateData.className})] findOne([(${tableMateData.className})] [(${tableMateData.fieldName})]) {
+        return [(${tableMateData.fieldName})]Repository.findOne([(${tableMateData.fieldName})]);
+    }
+}

@@ -25,6 +25,8 @@ public class CodeGenConfig {
     private String author;
     private String tablePrefix;
     private String tableSuffix;
+    private String groupId;
+    private String artifactId;
 
     private String templatePath;
     private String projectPath;
@@ -92,6 +94,23 @@ public class CodeGenConfig {
 
     public void setAuthor(String author) {
         this.author = author;
+    }
+
+
+    public String getArtifactId() {
+        return artifactId;
+    }
+
+    public void setArtifactId(String artifactId) {
+        this.artifactId = artifactId;
+    }
+
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
     }
 
     public String getTablePrefix() {

@@ -1,0 +1,51 @@
+package [(${fileMeta.packageName})];
+
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import [(${config.groupId})].[(${config.artifactId})].common.db.domain.Page;
+import [(${config.groupId})].[(${config.artifactId})].domain.[(${tableMateData.className})];
+import [(${config.groupId})].[(${config.artifactId})].mapper.[(${tableMateData.className})]Mapper;
+
+/**
+ * [(${tableMateData.tableComment})]
+ * @author Generate By [(${config.author})]
+ * @date [(${currentDate})]
+ */
+@Repository
+public class [(${tableMateData.className})]Repository {
+
+    @Autowired
+    private [(${tableMateData.className})]Mapper [(${tableMateData.fieldName})]Mapper;
+
+    public [(${tableMateData.className})] add([(${tableMateData.className})] [(${tableMateData.fieldName})]) {
+        [(${tableMateData.fieldName})]Mapper.insert([(${tableMateData.fieldName})]);
+        return [(${tableMateData.fieldName})];
+    }
+
+    public [(${tableMateData.className})] findOne([(${tableMateData.className})] [(${tableMateData.fieldName})]) {
+        return [(${tableMateData.fieldName})]Mapper.findOne([(${tableMateData.fieldName})]);
+    }
+
+    public [(${tableMateData.className})] findById(Integer id) {
+        return [(${tableMateData.fieldName})]Mapper.findById(id);
+    }
+
+    public List<[(${tableMateData.className})]> findList([(${tableMateData.className})] [(${tableMateData.fieldName})]) {
+        return [(${tableMateData.fieldName})]Mapper.findList([(${tableMateData.fieldName})]);
+    }
+
+
+    public Page<[(${tableMateData.className})]> findPage() {
+        return [(${tableMateData.fieldName})]Mapper.findPage(null,null);
+    }
+
+    public [(${tableMateData.className})] update([(${tableMateData.className})] [(${tableMateData.fieldName})]) {
+        [(${tableMateData.fieldName})]Mapper.updateByPrimaryKeySelective([(${tableMateData.fieldName})]);
+        return [(${tableMateData.fieldName})]Mapper.findById([(${tableMateData.fieldName})].getId());
+    }
+
+    public void delete(Integer id) {
+        [(${tableMateData.fieldName})]Mapper.deleteById(id);
+    }
+}

@@ -1,0 +1,19 @@
+package [(${fileMeta.packageName})];
+
+
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+import [(${config.groupId})].[(${config.artifactId})].common.db.domain.Page;
+import [(${config.groupId})].[(${config.artifactId})].mybatis.jpa.domain.PageRequest;
+import [(${config.groupId})].[(${config.artifactId})].mybatis.jpa.mapper.JpaMapper;
+import [(${config.groupId})].[(${config.artifactId})].domain.[(${tableMateData.className})];
+
+/**
+ * [(${tableMateData.tableComment})]
+ * @author Generate By [(${config.author})]
+ * @date [(${currentDate})]
+ */
+@Mapper
+public interface [(${tableMateData.className})]Mapper extends JpaMapper<[(${tableMateData.className})],Integer> {
+    Page<[(${tableMateData.className})]> findPage(@Param("[(${tableMateData.fieldName})]") [(${tableMateData.className})] [(${tableMateData.fieldName})], @Param("page") PageRequest pageParam);
+}
